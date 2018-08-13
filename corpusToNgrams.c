@@ -132,7 +132,7 @@ int ngrams_corpus_parse ( const char *corpus, size_t corpus_size, ngrams_t *ngra
     char **ngram = NULL;
     size_t i = 0, wordStart = 0;
 
-    if ( ( ngram = malloc ( sizeof ( char * ) ) ) == NULL )
+    if ( ( ngram = calloc ( 1, sizeof ( char * ) ) ) == NULL )
         goto over;
 
     for ( i = 0; i < corpus_size; i++ ) {
